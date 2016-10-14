@@ -41,7 +41,11 @@ import (
 	"github.com/xeipuuv/gojsonreference"
 )
 
-var osFS = osFileSystem(os.Open)
+var osFS http.FileSystem
+
+func SetOSFS(fs http.FileSystem) {
+	osFS = fs
+}
 
 // JSON loader interface
 
